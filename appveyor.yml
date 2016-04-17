@@ -20,13 +20,14 @@ install:
   - go version
   - go env
 #  - go get github.com/thrasher-/gocryptotrader
-#  - ps: cd c:\gopath\src\github.com\yxxyun\gocryptotrader
+  - ps: cd c:\gopath\src\github.com\yxxyun\bitfx\bitarb
 
 artifacts:
   - path: "fx.exe"
     name: bitfx
 build_script:
-  - go get -u -v github.com/yxxyun/bitfx/bitarb
+  - go get
+  - go build
 
 after_build:
   - ps: cp ../../../../bin/*.exe fx.exe
