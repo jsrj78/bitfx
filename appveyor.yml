@@ -1,0 +1,35 @@
+version: "{build}"
+
+platform: x64
+clone_folder: c:\gopath\src\github.com\yxxyun\bitfx
+branches:
+  only:
+    - master
+
+skip_tags: true
+
+environment:
+  GOPATH: c:\gopath
+  GOVERSION: 1.6
+
+install:
+  - set PATH=%GOPATH%\bin;c:\go\bin;%PATH%
+  - rmdir c:\go /s /q
+  - appveyor DownloadFile https://storage.googleapis.com/golang/go%GOVERSION%.windows-amd64.zip
+  - 7z x go%GOVERSION%.windows-amd64.zip -y -oC:\ > NUL
+  - go version
+  - go env
+#  - go get github.com/thrasher-/gocryptotrader
+#  - ps: cd c:\gopath\src\github.com\yxxyun\gocryptotrader
+
+artifacts:
+  - path: "bitfx.exe"
+    name: bitfx
+build_script:
+  - go get -u -v github.com/yxxyun/bitfx
+
+after_build:
+  - ps: cp ../../../../bin/bitfx.exe bitfx.exe
+  - ps: ls
+test: off
+deploy: off
