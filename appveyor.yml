@@ -23,13 +23,13 @@ install:
 #  - ps: cd c:\gopath\src\github.com\yxxyun\gocryptotrader
 
 artifacts:
-  - path: "bitfx.exe"
+  - path: "fx.exe"
     name: bitfx
 build_script:
-  - go get -u -v github.com/yxxyun/bitfx
+  - go get -u -v github.com/yxxyun/bitfx/bitarb
 
 after_build:
-  - ps: cp ../../../../bin/bitfx.exe bitfx.exe
+  - ps: cp ../../../../bin/*.exe fx.exe
   - ps: ls
 test: off
 deploy: off
