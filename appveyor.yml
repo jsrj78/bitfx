@@ -1,7 +1,7 @@
 version: "{build}"
 
 platform: x64
-clone_folder: c:\gopath\src\github.com\yxxyun\bitfx
+clone_folder: c:\gopath\src\bitfx
 branches:
   only:
     - master
@@ -20,7 +20,7 @@ install:
   - go version
   - go env
 #  - go get github.com/thrasher-/gocryptotrader
-  - ps: cd c:\gopath\src\github.com\yxxyun\bitfx\bitarb
+  - ps: cd c:\gopath\src\bitfx\bitarb
 
 artifacts:
   - path: "fx.exe"
