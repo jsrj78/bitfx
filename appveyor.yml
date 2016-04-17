@@ -23,7 +23,7 @@ install:
   - ps: cd c:\gopath\src\bitfx\bitarb
 
 artifacts:
-  - path: "fx.exe"
+  - path: "bitfx.exe"
     name: bitfx
 build_script:
   - go get
