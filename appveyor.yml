@@ -30,7 +30,7 @@ build_script:
   - go build
 
 after_build:
- # - ps: cp ../../../../bin/*.exe fx.exe
+ - ps: cp /bitarb/bitarb.exe bitarb.exe
   - ps: ls
 test: off
 deploy: off
