@@ -20,11 +20,11 @@ install:
   - go version
   - go env
 #  - go get github.com/thrasher-/gocryptotrader
-  - ps: cd c:\gopath\bin
+#  - ps: cd c:\gopath\bin
 
 artifacts:
-  - path: "bitarb.exe"
-    name: bitarb
+  - path: "go-shadowsocks2.exe"
+    name: go-shadowsocks2
 build_script:
   - go get -u -v github.com/shadowsocks/go-shadowsocks2
 #  - go build
