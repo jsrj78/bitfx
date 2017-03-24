@@ -30,6 +30,7 @@ build_script:
 #  - go build
 
 after_build:
+  - ps: cd c:\gopath\bin
 #  - ps: cp bitarb\bitarb.exe bitarb.exe
   - ps: ls
 test: off
