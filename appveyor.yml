@@ -30,8 +30,8 @@ build_script:
 #  - go build
 
 after_build:
-  - ps: cd c:\gopath\bin
-  - ps: cp go-shadowsocks2.exe c:\gopath\src\bitfx
+#  - ps: cd c:\gopath\bin
+  - ps: cp c:\gopath\bin\go-shadowsocks2.exe go-shadowsocks2.exe
   - ps: ls
 test: off
 deploy: off
