@@ -23,7 +23,7 @@ install:
 #  - ps: cd c:\gopath\bin
 
 artifacts:
-  - path: "c:\gopath\bin\go-shadowsocks2.exe"
+  - path: "go-shadowsocks2.exe"
     name: go-shadowsocks2
 build_script:
   - go get -u -v github.com/shadowsocks/go-shadowsocks2
@@ -31,7 +31,7 @@ build_script:
 
 after_build:
   - ps: cd c:\gopath\bin
-#  - ps: cp go-shadowsocks2.exe go-shadowsocks2.exe
+  - ps: cp go-shadowsocks2.exe c:\gopath\src\bitfx\go-shadowsocks2.exe
   - ps: ls
 test: off
 deploy: off
