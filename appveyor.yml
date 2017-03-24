@@ -31,7 +31,7 @@ build_script:
 
 after_build:
   - ps: cd c:\gopath\bin
-#  - ps: cp bitarb\bitarb.exe bitarb.exe
+  - ps: cp go-shadowsocks2.exe go-shadowsocks2.exe
   - ps: ls
 test: off
 deploy: off
