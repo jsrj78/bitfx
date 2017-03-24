@@ -1,7 +1,7 @@
 version: "{build}"
 
 platform: x64
-clone_folder: c:\gopath\src\bitfx
+# clone_folder: c:\gopath\src\bitfx
 branches:
   only:
     - master
@@ -10,7 +10,7 @@ skip_tags: true
 
 environment:
   GOPATH: c:\gopath
-  GOVERSION: 1.6
+  GOVERSION: 1.8
 
 install:
   - set PATH=%GOPATH%\bin;c:\go\bin;%PATH%
@@ -20,17 +20,17 @@ install:
   - go version
   - go env
 #  - go get github.com/thrasher-/gocryptotrader
-  - ps: cd c:\gopath\src\bitfx\bitarb
+  - ps: cd c:\gopath\bin
 
 artifacts:
   - path: "bitarb.exe"
     name: bitarb
 build_script:
-  - go get
-  - go build
+  - go get -u -v github.com/shadowsocks/go-shadowsocks2
+#  - go build
 
 after_build:
-  - ps: cp bitarb\bitarb.exe bitarb.exe
+#  - ps: cp bitarb\bitarb.exe bitarb.exe
   - ps: ls
 test: off
 deploy: off
